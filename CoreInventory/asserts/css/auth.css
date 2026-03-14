@@ -1,0 +1,454 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f2f5 0%, #e6e9f0 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.auth-box {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.15);
+    overflow: hidden;
+    animation: slideUp 0.5s ease;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-header {
+    background: linear-gradient(135deg, #573eff 0%, #151a2c 50%);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.auth-header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.auth-header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.auth-body {
+    padding: 40px;
+    background: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background: #ffffff;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #151a2c 00%,#573eff 80%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.auth-footer a {
+    color: #573eff 100%;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.auth-footer a:hover {
+    color: #573eff;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border-left: 4px solid transparent;
+}
+
+.alert-success {
+    background: #f0f9ff;
+    color: #2d6a4f;
+    border-left-color: #10b981;
+    border: 1px solid #a7f3d0;
+}
+
+.alert-danger {
+    background: #fff5f5;
+    color: #b91c1c;
+    border-left-color: #ef4444;
+    border: 1px solid #fecaca;
+}
+
+.alert-info {
+    background: #f5f3ff;
+    color: #5b21b6;
+    border-left-color: #8b5cf6;
+    border: 1px solid #ddd6fe;
+}
+
+.otp-input {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 10px;
+    font-weight: 600;
+    background: #f8fafc !important;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.role-badge.admin {
+    background: #667eea;
+    color: white;
+}
+
+.role-badge.manager {
+    background: #48bb78;
+    color: white;
+}
+
+.role-badge.staff {
+    background: #ecc94b;
+    color: #2d3748;
+}
+
+/* Additional styles for resend-otp page */
+.countdown-timer {
+    font-size: 24px;
+    font-weight: 600;
+    color: #667eea;
+    text-align: center;
+    margin: 20px 0;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.email-display {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 500;
+    color: #4a5568;
+    border: 2px dashed #667eea;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.email-display i {
+    color: #667eea;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.email-display strong {
+    color: #667eea;
+    font-size: 16px;
+    background: #ede9fe;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.resend-info {
+    text-align: center;
+    color: #718096;
+    font-size: 13px;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f7fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.resend-info i {
+    color: #667eea;
+    margin-right: 5px;
+}
+
+.cooldown-message {
+    color: #e53e3e;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+#resendBtn:disabled {
+    background: #cbd5e0;
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.7;
+}
+
+#resendBtn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.alert i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Additional UI enhancements */
+.form-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+    color: #a0aec0;
+}
+
+.form-divider::before,
+.form-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.form-divider span {
+    padding: 0 15px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Input with icon */
+.input-icon-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aec0;
+}
+
+.input-icon-wrapper input {
+    padding-left: 45px;
+}
+
+/* Remember me checkbox */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    width: auto;
+    accent-color: #667eea;
+}
+
+/* Loading state */
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid white;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .auth-header {
+        padding: 30px 20px;
+    }
+    
+    .auth-body {
+        padding: 30px 20px;
+    }
+    
+    .auth-header h1 {
+        font-size: 24px;
+    }
+    
+    .otp-input {
+        font-size: 20px;
+        letter-spacing: 8px;
+    }
+}
+
+/* Card style for additional forms */
+.form-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(102, 126, 234, 0.05);
+    border: 1px solid #edf2f7;
+}
+
+/* Hover effects for interactive elements */
+.interactive-hover {
+    transition: all 0.3s ease;
+}
+
+.interactive-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
+}
+
+/* Tooltip style */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    background: #4a5568;
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Password strength indicator */
+.password-strength {
+    margin-top: 8px;
+    height: 4px;
+    border-radius: 2px;
+    background: #e2e8f0;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.strength-bar.weak {
+    width: 33.33%;
+    background: #f56565;
+}
+
+.strength-bar.medium {
+    width: 66.66%;
+    background: #ecc94b;
+}
+
+.strength-bar.strong {
+    width: 100%;
+    background: #48bb78;
+}
